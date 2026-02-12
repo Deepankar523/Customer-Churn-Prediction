@@ -53,6 +53,17 @@ The Random Forest model achieved **85% accuracy**, outperforming Logistic Regres
 
 ---
 
+---
+
+## 📈 Why Random Forest Performed Better?
+
+- Logistic Regression assumes linear relationship between features and target.
+- Random Forest handles non-linear patterns effectively.
+- Random Forest reduces overfitting using multiple decision trees.
+- It automatically performs feature selection during training.
+
+---
+
 ## 🚀 Key Learnings
 - Data preprocessing
 - Train-test split
@@ -65,3 +76,17 @@ The Random Forest model achieved **85% accuracy**, outperforming Logistic Regres
 ## 👨‍💻 Author
 Deepankar  
 Aspiring Data Analyst | Machine Learning Enthusiast
+
+---
+
+## 📸 Project Output Screenshots
+
+### Confusion Matrix
+![Confusion Matrix](Screenshot 2026-02-12 195942.png)
+
+### Logistic Regression Accuracy
+![Logistic Accuracy](Screenshot 2026-02-12 200014.png)
+
+### Random Forest Accuracy
+![Random Forest Accuracy](Screenshot 2026-02-12 200033.png)
+
