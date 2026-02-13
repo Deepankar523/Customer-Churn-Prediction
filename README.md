@@ -90,3 +90,10 @@ Aspiring Data Analyst | Machine Learning Enthusiast
 ### Random Forest Accuracy
 ![Random Forest Accuracy](Screenshot 2026-02-12 200033.png)
 
+---
+
+## 🔮 Future Improvements
+- Hyperparameter tuning
+- Cross-validation
+- Deploy model using Flask or Streamlit
+- Azure ML deployment
