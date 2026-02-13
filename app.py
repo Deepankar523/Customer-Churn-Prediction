@@ -33,3 +33,15 @@ if st.button("Predict Churn"):
         st.error("⚠️ This customer is likely to churn.")
     else:
         st.success("✅ This customer is likely to stay.")
+
+if st.button("Predict Churn"):
+
+    prediction = model.predict(input_df)[0]
+    probability = model.predict_proba(input_df)[0][1]
+
+    if prediction == 1:
+        st.error(f"⚠️ This customer is likely to churn.")
+    else:
+        st.success(f"✅ This customer is likely to stay.")
+
+    st.write(f"📊 Churn Probability: {round(probability * 100, 2)}%")
