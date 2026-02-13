@@ -53,6 +53,18 @@ The Random Forest model achieved **85% accuracy**, outperforming Logistic Regres
 
 ---
 
+## 📊 Feature Importance
+
+The Random Forest model was used to identify the most influential features contributing to customer churn.
+
+Top influencing factors include:
+- Tenure
+- Monthly charges
+- Service usage patterns
+- Contract type related features
+
+This helps businesses focus on key drivers of churn.
+
 ---
 
 ## 📈 Why Random Forest Performed Better?
