@@ -28,6 +28,7 @@ for column in X.columns:
 if st.button("Predict Churn"):
     input_df = pd.DataFrame([input_data])
     prediction = model.predict(input_df)[0]
+    probability = model.predict_proba(input_df)[0][1]
 
     if prediction == 1:
         st.error("⚠️ This customer is likely to churn.")
