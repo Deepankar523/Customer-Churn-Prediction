@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
 
 # Title
 st.title("📊 Customer Churn Prediction App")
@@ -17,16 +16,39 @@ y = df["churn"]
 model = RandomForestClassifier()
 model.fit(X, y)
 
-st.subheader("Enter Customer Details:")
+st.subheader("Enter Key Customer Details:")
 
-# Create input fields dynamically
-input_data = {}
-for column in X.columns:
-    input_data[column] = st.number_input(f"{column}", value=0.0)
+# 🔹 Only important inputs (reduced from 28 to 6)
+tenure = st.number_input("Tenure (months)", min_value=0.0)
+age = st.number_input("Age", min_value=18.0)
+income = st.number_input("Income", min_value=0.0)
+employ = st.number_input("Employment Status (0 = No, 1 = Yes)", min_value=0.0, max_value=1.0)
+longmon = st.number_input("Monthly Long Distance Charges", min_value=0.0)
+longten = st.number_input("Total Long Distance Charges", min_value=0.0)
 
 # Prediction
 if st.button("Predict Churn"):
+
+    # Create dataframe with selected inputs
+    input_data = {
+        'tenure': tenure,
+        'age': age,
+        'income': income,
+        'employ': employ,
+        'longmon': longmon,
+        'longten': longten
+    }
+
     input_df = pd.DataFrame([input_data])
+
+    # 🔹 Add missing columns as 0 (important for model compatibility)
+    for col in X.columns:
+        if col not in input_df.columns:
+            input_df[col] = 0
+
+    # Reorder columns to match training data
+    input_df = input_df[X.columns]
+
     prediction = model.predict(input_df)[0]
     probability = model.predict_proba(input_df)[0][1]
 
@@ -36,3 +58,4 @@ if st.button("Predict Churn"):
         st.success("✅ This customer is likely to stay.")
 
     st.write(f"📊 Churn Probability: {round(probability * 100, 2)}%")
+
