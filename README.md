@@ -94,16 +94,16 @@ Aspiring Data Analyst | Machine Learning Enthusiast
 ## 📸 Project Output Screenshots
 
 ### Confusion Matrix
-![Confusion Matrix](Screenshot 2026-02-12 195942.png)
+![Confusion Matrix](Confusion Matrix.png)
 
 ### Logistic Regression Accuracy
-![Logistic Accuracy](Screenshot 2026-02-12 200014.png)
+![Logistic Accuracy](Classification Report Screenshot.png)
 
 ### Random Forest Accuracy
-![Random Forest Accuracy](Screenshot 2026-02-12 200033.png)
+![Random Forest Accuracy](Random Forest Accuracy Output.png)
 
 ### Feature Importance (Random Forest)
-![Feature Importance](Screenshot 2026-02-13 161322.png)
+![Feature Importance](Feature Importance graph.png)
 
 ### 📊 Key Insights from Feature Importance
 - Employment status (employ) is the most influential factor.
@@ -113,7 +113,7 @@ Aspiring Data Analyst | Machine Learning Enthusiast
 This analysis helps businesses identify high-risk customers and design retention strategies.
 
 ### ROC Curve
-![ROC Curve](Screenshot 2026-02-13 161529.png)
+![ROC Curve](ROC Curve.png)
 
 ---
 
