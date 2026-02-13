@@ -102,6 +102,19 @@ Aspiring Data Analyst | Machine Learning Enthusiast
 ### Random Forest Accuracy
 ![Random Forest Accuracy](Screenshot 2026-02-12 200033.png)
 
+### Feature Importance (Random Forest)
+![Feature Importance](Screenshot 2026-02-13 161322.png)
+
+### 📊 Key Insights from Feature Importance
+- Employment status (employ) is the most influential factor.
+- Long-distance usage (loglong, longmon, longten) strongly impacts churn.
+- Age and tenure also significantly affect customer retention.
+- Income and card-related features contribute moderately.
+This analysis helps businesses identify high-risk customers and design retention strategies.
+
+### ROC Curve
+![ROC Curve](Screenshot 2026-02-13 161529.png)
+
 ---
 
 ## 🔮 Future Improvements
