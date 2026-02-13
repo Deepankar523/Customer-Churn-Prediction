@@ -135,3 +135,22 @@ Based on model insights:
 - Monitor employment status segments for churn risk patterns.
 
 Using predictive models like this can help telecom companies reduce revenue loss and improve customer retention.
+
+---
+
+🔗 Live Repository: https://github.com/Deepankar523/Customer-Churn-Prediction
+
+---
+
+https://customer-churn-prediction-3wpipqkdnncodurrdysf8a.streamlit.app/
+
+---
+
+## Cloud Deployment (Azure)
+- This machine learning model can be deployed using:
+- Azure Machine Learning for scalable model training and endpoint deployment
+- Azure App Service for hosting the Streamlit web application
+- Azure Blob Storage for dataset storage
+- Azure Container Instances (ACI) for containerized deployment
+
+This enables secure, scalable, and production-ready customer churn prediction in a cloud environment.
