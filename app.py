@@ -13,23 +13,25 @@ X = df.drop("churn", axis=1)
 y = df["churn"]
 
 # Train model
-model = RandomForestClassifier()
+model = RandomForestClassifier(random_state=42)
 model.fit(X, y)
 
 st.subheader("Enter Key Customer Details:")
 
-# 🔹 Only important inputs (reduced from 28 to 6)
-tenure = st.number_input("Tenure (months)", min_value=0.0)
-age = st.number_input("Age", min_value=18.0)
-income = st.number_input("Income", min_value=0.0)
-employ = st.number_input("Employment Status (0 = No, 1 = Yes)", min_value=0.0, max_value=1.0)
-longmon = st.number_input("Monthly Long Distance Charges", min_value=0.0)
-longten = st.number_input("Total Long Distance Charges", min_value=0.0)
+# 🔹 Professional Inputs (Sliders + Dropdown)
+tenure = st.slider("Tenure (months)", 0, 72, 12)
+age = st.slider("Age", 18, 80, 30)
+income = st.slider("Income", 0, 200, 50)
+
+employ_option = st.selectbox("Employment Status", ["No", "Yes"])
+employ = 1 if employ_option == "Yes" else 0
+
+longmon = st.slider("Monthly Long Distance Charges", 0, 200, 20)
+longten = st.slider("Total Long Distance Charges", 0, 1000, 100)
 
 # Prediction
 if st.button("Predict Churn"):
 
-    # Create dataframe with selected inputs
     input_data = {
         'tenure': tenure,
         'age': age,
@@ -41,21 +43,25 @@ if st.button("Predict Churn"):
 
     input_df = pd.DataFrame([input_data])
 
-    # 🔹 Add missing columns as 0 (important for model compatibility)
+    # Add missing columns as 0
     for col in X.columns:
         if col not in input_df.columns:
             input_df[col] = 0
 
-    # Reorder columns to match training data
+    # Reorder columns
     input_df = input_df[X.columns]
 
     prediction = model.predict(input_df)[0]
     probability = model.predict_proba(input_df)[0][1]
 
-    if prediction == 1:
-        st.error("⚠️ This customer is likely to churn.")
-    else:
-        st.success("✅ This customer is likely to stay.")
-
+    # Result Display
     st.write(f"📊 Churn Probability: {round(probability * 100, 2)}%")
+
+    if probability > 0.7:
+        st.error("🔴 High Risk: This customer is likely to churn.")
+    elif probability > 0.4:
+        st.warning("🟡 Medium Risk: Customer may churn.")
+    else:
+        st.success("🟢 Low Risk: This customer is likely to stay.")
+
 
