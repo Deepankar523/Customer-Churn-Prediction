@@ -122,3 +122,16 @@ This analysis helps businesses identify high-risk customers and design retention
 - Cross-validation
 - Deploy model using Flask or Streamlit
 - Azure ML deployment
+
+---
+
+## 💼 Business Recommendations
+
+Based on model insights:
+
+- Focus retention strategies on customers with high long-distance usage.
+- Provide loyalty offers for long-tenure customers at risk.
+- Offer personalized plans for high-usage customers.
+- Monitor employment status segments for churn risk patterns.
+
+Using predictive models like this can help telecom companies reduce revenue loss and improve customer retention.
